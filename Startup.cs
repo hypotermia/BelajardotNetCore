@@ -37,10 +37,8 @@ namespace DatingApp.api
                         .AllowAnyMethod();
                 });
             });
-
-            services.AddDbContext<DataContext>(options =>
-                    options.UseSqlite(Configuration.GetConnectionString("DataContext")));
-
+            services.AddDbContext<DataContext>(options =>options.UseSqlite(Configuration.GetConnectionString("DataContext")));
+            services.AddScoped<IAuthRepository,AuthRepository>();
 
         }
 
