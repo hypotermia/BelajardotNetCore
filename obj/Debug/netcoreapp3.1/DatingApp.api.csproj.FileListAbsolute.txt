@@ -144,3 +144,7 @@ C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\
 C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netcoreapp2.0\System.Runtime.Caching.dll
 C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\runtimes\win\lib\netstandard2.0\System.Security.Cryptography.ProtectedData.dll
 C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\obj\Debug\netcoreapp3.1\DatingApp.api.csproj.CopyComplete
+C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.JsonWebTokens.dll
+C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Logging.dll
+C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Tokens.dll
+C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\System.IdentityModel.Tokens.Jwt.dll
