@@ -17,7 +17,7 @@ namespace DatingApp.api.Controllers
             _repo = repo;
         }
         [HttpPost("Register")]
-        public async Task<IActionResult> Register(UserForRegisDto user){
+        public async Task<IActionResult> Register([FromBody]UserForRegisDto user){
             user.Username = user.Username.ToLower();
             if(await _repo.UserExists(user.Username))
             return BadRequest("Username Already exists");
