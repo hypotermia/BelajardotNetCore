@@ -11,7 +11,9 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.EntityFrameworkCore;
-
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 namespace DatingApp.api
 {
     public class Startup
@@ -27,6 +29,7 @@ namespace DatingApp.api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
+            
             services.AddCors(options =>
             {
                 // this defines a CORS policy called "default"
@@ -39,6 +42,19 @@ namespace DatingApp.api
             });
             services.AddDbContext<DataContext>(options =>options.UseSqlite(Configuration.GetConnectionString("DataContext")));
             services.AddScoped<IAuthRepository,AuthRepository>();
+            //authentication header menggunakan Bearer
+            services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+                .AddJwtBearer(options => 
+                {
+                    options.TokenValidationParameters = new TokenValidationParameters(){
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes
+                        (Configuration.GetSection("AppSettings:Token").Value)),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
+
 
         }
 
@@ -50,6 +66,7 @@ namespace DatingApp.api
                 app.UseDeveloperExceptionPage();
             }
             app.UseCors("default");
+            app.UseAuthentication(); // tambah autentication
 
             app.UseHttpsRedirection();
 

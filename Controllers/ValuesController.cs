@@ -2,12 +2,14 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 
 namespace DatingApp.api.Controllers
 {
+    [Authorize] //tambahan untuk authentication
     [Route("api/[controller]")]
     [ApiController]
     public class ValuesController : ControllerBase
@@ -27,6 +29,7 @@ namespace DatingApp.api.Controllers
         }
 
         // GET: api/Values/5
+        [AllowAnonymous]
         [HttpGet("{id}")]
         public async Task<ActionResult<Value>> GetValue(int id)
         {
