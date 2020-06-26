@@ -19,6 +19,9 @@ using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using DatingApp.API.Helpers;
+using DatingApp.API.Data;
+using AutoMapper;
+
 namespace DatingApp.api
 {
     public class Startup
@@ -34,7 +37,6 @@ namespace DatingApp.api
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllers();
-            
             services.AddCors(options =>
             {
                 // this defines a CORS policy called "default"
@@ -45,8 +47,12 @@ namespace DatingApp.api
                         .AllowAnyMethod();
                 });
             });
+            services.AddAutoMapper();
+            services.AddTransient<Seed>();
             services.AddDbContext<DataContext>(options =>options.UseSqlite(Configuration.GetConnectionString("DataContext")));
             services.AddScoped<IAuthRepository,AuthRepository>();
+            services.AddScoped<IDatingRepository,DatingRepository>();
+
             //authentication header menggunakan Bearer
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(options => 
@@ -64,7 +70,7 @@ namespace DatingApp.api
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
-        public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
+        public void Configure(IApplicationBuilder app, IWebHostEnvironment env,Seed seeder)
         {
             if (env.IsDevelopment())
             {
@@ -86,7 +92,7 @@ namespace DatingApp.api
             }
             app.UseCors("default");
             app.UseAuthentication(); // tambah autentication
-
+            seeder.SeedUsers();
             app.UseHttpsRedirection();
 
             app.UseRouting();

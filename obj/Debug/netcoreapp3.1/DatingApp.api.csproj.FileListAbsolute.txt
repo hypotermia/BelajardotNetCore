@@ -151,3 +151,6 @@ C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\
 C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Authentication.JwtBearer.dll
 C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.dll
 C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\Data\UserSeedData.json
+C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\AutoMapper.dll
+C:\Users\Zakki\Downloads\ARCoreNg\lab\02\src\Before\DatingApp\DatingApp.API\bin\Debug\netcoreapp3.1\AutoMapper.Extensions.Microsoft.DependencyInjection.dll

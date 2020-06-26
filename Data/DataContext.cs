@@ -13,4 +13,5 @@ using Microsoft.EntityFrameworkCore;
 
         public DbSet<Value> Value { get; set; }
         public DbSet<User> Users {get;set;}
+        public DbSet<Photos> Photos {get;set;}
     }
